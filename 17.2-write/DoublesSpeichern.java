@@ -27,7 +27,7 @@ public class DoublesSpeichern {
 
     /**
      * liest die double-Werte aus der angegebenen Datei und gibt sie als
-     * double-Array zur�ck.
+     * double-Array zurueck.
      * 
      * @param dateiname
      *                  der Name der Datei

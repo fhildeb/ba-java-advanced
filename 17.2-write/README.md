@@ -133,7 +133,7 @@ In die Datei quadrate.dat wurde geschrieben: 9409
 In die Datei quadrate.dat wurde geschrieben: 9604
 In die Datei quadrate.dat wurde geschrieben: 9801
 In die Datei quadrate.dat wurde geschrieben: 10000
-Dateizeiger in quadrate.dat wurde zur�ck zum Anfang gesetzt.
+Dateizeiger in quadrate.dat wurde zurueck zum Anfang gesetzt.
 an Dateiposition 0 beginnt 0
 an Dateiposition 4 beginnt 1
 an Dateiposition 8 beginnt 4
