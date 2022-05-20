@@ -4,10 +4,9 @@ import java.util.*;
 
 public class Telefonbuch {
 
-    Map<String,Set<String>> Speicher;         //erster wert string, folgende werte eine samlung an strings 
-    
-    public static void main(String[] args) 
-    {
+    Map<String, Set<String>> Speicher; // erster wert string, folgende werte eine samlung an strings
+
+    public static void main(String[] args) {
         Telefonbuch t = new Telefonbuch();
         t.einfuegen("Otto", "1234");
         t.einfuegen("Otto", "0174");
@@ -15,57 +14,49 @@ public class Telefonbuch {
         System.out.println(t);
         System.out.println(t.HatTelNr("Otto"));
     }
-    public Telefonbuch()
-    {
-        Speicher = new HashMap<String,Set<String>>();
+
+    public Telefonbuch() {
+        Speicher = new HashMap<String, Set<String>>();
     }
-    public boolean einfuegen(String name,String nummer)
-    {
-        if(Speicher.containsKey(name))      
-        {       //name bekannt ,nummer gespeichert
+
+    public boolean einfuegen(String name, String nummer) {
+        if (Speicher.containsKey(name)) { // name bekannt ,nummer gespeichert
             Speicher.get(name).add(nummer);
             return true;
-        }
-        else
-        {       //neuer name
+        } else { // neuer name
             HashSet<String> nummern = new HashSet<String>();
             nummern.add(nummer);
             Speicher.put(name, nummern);
             return false;
         }
-        
+
     }
-    public String toString()
-    {
+
+    public String toString() {
         return Speicher.toString();
     }
-    public String HatTelNr(String name)
-    {
-        if(Speicher.containsKey(name))
-        {
+
+    public String HatTelNr(String name) {
+        if (Speicher.containsKey(name)) {
             return Speicher.get(name).toString();
         }
         return "Fehler";
     }
-    public boolean loeschen (String name)
-    {
-        if(Speicher.containsKey(name))
-        {
+
+    public boolean loeschen(String name) {
+        if (Speicher.containsKey(name)) {
             Speicher.remove(name);
             return true;
-        }
-        else
+        } else
             return false;
     }
-    public boolean loeschen(String name, String nummer)
-    {
-        if(Speicher.containsKey(name))
-        {
+
+    public boolean loeschen(String name, String nummer) {
+        if (Speicher.containsKey(name)) {
             Speicher.get(name).remove(nummer);
             return true;
-        }
-        else
+        } else
             return false;
     }
-    
+
 }

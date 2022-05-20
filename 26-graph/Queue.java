@@ -4,14 +4,14 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  Implementiert eine Warteschlange.
+ * Implementiert eine Warteschlange.
  */
 public class Queue<E> implements Iterable<E> {
-    private int s;            // Anzahl der Elemente in der Queue
-    private Node<E> first;    // Beginn
-    private Node<E> last;     // Ende
+    private int s; // Anzahl der Elemente in der Queue
+    private Node<E> first; // Beginn
+    private Node<E> last; // Ende
 
-    // statische Hilfsklasse 
+    // statische Hilfsklasse
     private static class Node<E> {
         private E item;
         private Node<E> next;
@@ -22,7 +22,7 @@ public class Queue<E> implements Iterable<E> {
      */
     public Queue() {
         first = null;
-        last  = null;
+        last = null;
         s = 0;
     }
 
@@ -34,17 +34,18 @@ public class Queue<E> implements Iterable<E> {
     }
 
     /**
-     *  Größe der Warteschlange.
+     * Größe der Warteschlange.
      */
     public int size() {
-        return s;     
+        return s;
     }
 
     /**
      * Gibt das am "längsten wartende" Element zurück.
      */
     public E peek() {
-        if (isEmpty()) throw new NoSuchElementException("Queue leer");
+        if (isEmpty())
+            throw new NoSuchElementException("Queue leer");
         return first.item;
     }
 
@@ -57,8 +58,10 @@ public class Queue<E> implements Iterable<E> {
         last = new Node<E>();
         last.item = item;
         last.next = null;
-        if (isEmpty()) first = last;
-        else           oldlast.next = last;
+        if (isEmpty())
+            first = last;
+        else
+            oldlast.next = last;
         s++;
     }
 
@@ -69,32 +72,34 @@ public class Queue<E> implements Iterable<E> {
      * @throws java.util.NoSuchElementException falls Queue leer ist.
      */
     public E dequeue() {
-        if (isEmpty()) throw new NoSuchElementException("Queue leer");
+        if (isEmpty())
+            throw new NoSuchElementException("Queue leer");
         E item = first.item;
         first = first.next;
         s--;
-        if (isEmpty()) last = null;   
+        if (isEmpty())
+            last = null;
         return item;
     }
 
     /**
-     *  Erzeugt eine Zeichenkette, mit allen in der Warteschlange gespeicherten
-     *  Elementen. 
+     * Erzeugt eine Zeichenkette, mit allen in der Warteschlange gespeicherten
+     * Elementen.
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (E item : this)
             s.append(item + " ");
         return s.toString();
-    } 
+    }
 
     /**
      * Gibt einen Iterator zum traversieren der Schlange zurück.
      * Die Reihenfolge der Elemente entspricht dem FIFO-Prinzip.
      * 
      */
-    public Iterator<E> iterator()  {
-        return new ListIterator<E>(first);  
+    public Iterator<E> iterator() {
+        return new ListIterator<E>(first);
     }
 
     private class ListIterator<Item> implements Iterator<Item> {
@@ -104,19 +109,22 @@ public class Queue<E> implements Iterable<E> {
             current = first;
         }
 
-        public boolean hasNext()  { return current != null;                     }
+        public boolean hasNext() {
+            return current != null;
+        }
 
-        // wird nicht gebenötigt und ist laut Interface optional 
-        public void remove()      { throw new UnsupportedOperationException();  }
+        // wird nicht gebenötigt und ist laut Interface optional
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
 
         public Item next() {
-            if (!hasNext()) throw new NoSuchElementException();
+            if (!hasNext())
+                throw new NoSuchElementException();
             Item item = current.item;
-            current = current.next; 
+            current = current.next;
             return item;
         }
     }
 
-
- 
 }
