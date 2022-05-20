@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="900.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowControl">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="900.0" spacing="30.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="900.0" spacing="30.0">
+               <children>
+                  <Label fx:id="wuerfelnLabel" alignment="CENTER" text="Anzahl der Würfe eingeben:" />
+                  <TextField fx:id="textBox" alignment="CENTER" promptText="1" />
+                  <Button fx:id="wuerfeln" alignment="CENTER" mnemonicParsing="false" onAction="#handleWuerfeln" text="Würfeln" />
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="394.0" prefWidth="900.0" spacing="10.0">
+               <children>
+                  <TableView fx:id="tabHaeufigkeiten" prefHeight="359.0" prefWidth="494.0">
+                    <columns>
+                      <TableColumn fx:id="tabAugenzahlen" prefWidth="166.0" text="Augenzahlen" />
+                      <TableColumn fx:id="tabAbsHaeufigkeit" prefWidth="142.0" text="abs. Häufigkeit" />
+                      <TableColumn fx:id="tabRelHaeufigkeit" prefWidth="138.0" text="rel. Häufigkeit" />
+                    </columns>
+                  </TableView>
+                  <PieChart fx:id="diaHaeufigkeit" title="Relative Häufigkeiten" />
+               </children>
+               <padding>
+                  <Insets left="2.0" right="2.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
