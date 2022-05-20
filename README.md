@@ -7,6 +7,7 @@ HSMW BA Java Course for Advanced Students from the University of Applied Science
 
 [Eclipse](https://www.eclipse.org)
 [JavaFX](https://openjfx.io/)
+[Scene Builder](https://gluonhq.com/products/scene-builder/)
 
 ## Run in Terminal
 
