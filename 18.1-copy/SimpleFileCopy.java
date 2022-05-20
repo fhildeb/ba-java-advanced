@@ -12,35 +12,35 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class SimpleFileCopy {
-	
+
 	public static void copyFile(String source, String target) {
-		Path sourcePath      = Paths.get(source);
+		Path sourcePath = Paths.get(source);
 		Path destinationPath = Paths.get(target);
 
 		try {
-		    Files.copy(sourcePath, destinationPath,
-		            StandardCopyOption.REPLACE_EXISTING);
-		} catch(FileAlreadyExistsException e) {
-		    //destination file already exists
+			Files.copy(sourcePath, destinationPath,
+					StandardCopyOption.REPLACE_EXISTING);
+		} catch (FileAlreadyExistsException e) {
+			// destination file already exists
 		} catch (IOException e) {
-		    //something else went wrong
-		    e.printStackTrace();
+			// something else went wrong
+			e.printStackTrace();
 		}
 	}
-	
+
 	public static void moveFile(String source, String target) {
-		Path sourcePath      = Paths.get(source);
+		Path sourcePath = Paths.get(source);
 		Path destinationPath = Paths.get(target);
 
 		try {
-		    Files.move(sourcePath, destinationPath,
-		            StandardCopyOption.REPLACE_EXISTING);
+			Files.move(sourcePath, destinationPath,
+					StandardCopyOption.REPLACE_EXISTING);
 		} catch (IOException e) {
-		    //moving file failed.
-		    e.printStackTrace();
+			// moving file failed.
+			e.printStackTrace();
 		}
 	}
-	
+
 	public static void copyURL(String source, String target) throws IOException {
 		URL website = new URL(source);
 		ReadableByteChannel rbc = Channels.newChannel(website.openStream());
