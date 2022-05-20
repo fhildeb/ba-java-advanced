@@ -7,34 +7,28 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-
 // Datenmodell fuer die Tabelle
-public  class Haeufigkeiten 
-{
+public class Haeufigkeiten {
 	private StringProperty augenzahl;
 	private IntegerProperty absHaeufigkeit;
 	private DoubleProperty relHaeufigkeit;
-	
-        public Haeufigkeiten(String aZahl, Integer aHaeufigkeit, Double rHaeufigkeit)
-	{
-	
+
+	public Haeufigkeiten(String aZahl, Integer aHaeufigkeit, Double rHaeufigkeit) {
+
 		this.augenzahl = new SimpleStringProperty(aZahl);
 		this.absHaeufigkeit = new SimpleIntegerProperty(aHaeufigkeit);
 		this.relHaeufigkeit = new SimpleDoubleProperty(rHaeufigkeit);
-	} 
-	
-	public StringProperty augenzahlProperty()
-	{
+	}
+
+	public StringProperty augenzahlProperty() {
 		return augenzahl;
 	}
-	
-	public IntegerProperty absHaeufigkeitProperty()
-	{
+
+	public IntegerProperty absHaeufigkeitProperty() {
 		return absHaeufigkeit;
 	}
-	
-	public DoubleProperty relHaeufigkeitProperty()
-	{
+
+	public DoubleProperty relHaeufigkeitProperty() {
 		return relHaeufigkeit;
 	}
 
