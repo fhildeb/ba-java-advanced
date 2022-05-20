@@ -20,264 +20,274 @@ public class Malen extends JFrame {
 	private JButton delete;
 	private JButton open;
 	private JButton save;
-	private JButton exit;
-	private ZeichenPanel panel;
-	private JPanel knopfPanel;
+	private JButton exi
+	vate ZeichenPanel panel;
+		 JPanel knopfPane
 
-	// Im Konstruktor wird die Oberflaeche angelegt
+	Im Konstruktor wird die Oberflaeche angelegt
 	public Malen() {
 		super("Malen");
 		// Fensterschliesser
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+			setDefaultCloseOperat
+
 		// Fenstergroesse
-		setSize(500, 300);
-		// Bildschirmkoordinaten des Fensters
-		setLocation(200, 200);
-		// Fenstergroesse nicht variable
-		setResizable(false);
 
-		// oben: Knopf fuer die Farbauswahl
-		Icon icon = new ImageIcon("farben.jpg");
-		farbWahl = new JButton();
-		farbWahl.setIcon(icon);
-		add(farbWahl, "North");
+	 Bildschirmkoordinaten des Fensters
+	tLocation(200, 200);
+		stergroesse nic
+		izable(false);
+		
+		n: Knopf fuer die Farb
+		con = new ImageIcon(
 
-		/*
-		 * unten: Panel fuer die Knoepfe zum
-		 * Loeschen, Laden, Speichern und Beenden
-		 */
-		knopfPanel = new JPanel();
-		add(knopfPanel, "South");
+		hl.setIcon(icon);
+		rbWahl, "North");
 
-		// Knopf zum Loeschen des Bildes
-		delete = new JButton("Bild loeschen");
+		
 
-		// Knopf zum Laden des Bildes - funktioniert noch nicht
-		open = new JButton("Bild laden");
-		open.setEnabled(true);
+		schen, Laden, Speichern und Beenden
+		
 
-		// Knopf zum Speichern des Bildes - funktioniert noch nicht
-		save = new JButton("Bild speichern");
-		save.setEnabled(true);
+		opfPanel, "South");
+		
+		pf zum Loeschen des Bildes
+		 = new JButton("Bild loeschen");
 
-		// Knopf zum Beenden der Anwendung
-		exit = new JButton("Ende");
+		pf zum Laden de
+		 new JButton("Bild laden");
 
-		// Knoepfe auf das Knopfpanel legen
-		knopfPanel.add(delete);
-		knopfPanel.add(save);
-		knopfPanel.add(open);
-		knopfPanel.add(exit);
+		
+		pf zum Speichern des Bildes - funk
+		 new JButton("Bild speichern");
+		etEnabled(true);
+		
 
-		// mitte: Zeichenpanel
-		panel = new ZeichenPanel();
-		add(panel, "Center");
+		 new JButton("Ende");
+		
+		epfe auf das Knopfpanel leg
+		anel.add(delete);
+		anel.add(save);
+		anel.add(open);
+		anel.add(exit);
 
-		/*
-		 * Farbauswahlknopf beim Actionlistener anmelden,
-		 * Reaktion beim Druecken des Farbauswahlknopfes
-		 */
+		te: Zeichenpanel
+		= new ZeichenPanel();
+		nel, "Center");
+		
 
-		farbWahl.addActionListener(e -> {
-			Component comp = (Component) e.getSource();
-			Color newColor = JColorChooser.showDialog(null, "Waehle neue Farbe", comp.getBackground());
-			if (newColor != null)
-				panel.setzenMalFarbe(newColor);
-		});
+		bauswahlknopf beim Actionlistene
+		ktion beim Druecken des Farbauswahlknopfes
+		
+		
 
-		/*
-		 * Loeschknopf beim Actionlistener anmelden,
-		 * Reaktion beim Druecken des Loeschknopfes
-		 */
+		nent comp = (Component) e.getSour
+		 newColor = JColorChooser.showDialog(null, "Waehle neue 
+		ewCo
 
-		delete.addActionListener(e -> panel.loeschenBild());
+		l.setzen
 
-		/*
-		 * Exitknopf beim Actionlistener anmelden,
-		 * Reaktion beim Druecken des Exitknopfes
-		 */
+		
+		
+		
+		
+		schknopf beim Actionlistener anmelden,
+		ktion beim Druecken des Lo
+		
+		
 
-		exit.addActionListener(e -> {
-			dispose();
-			System.exit(0);
-		});
+		
+		
+	knopf beim Actionlistener
 
-		save.addActionListener(e -> {
-			panel.speichernBild();
-		});
-		open.addActionListener(e -> {
-			try {
-				panel.ladenBild();
+	
+		
+		ddActi
+	
+
+		
+		
+
+	anel.speichernBild();
+	;
+		ddActionLi
+		
+	panel.ladenBild();
 			} catch (ClassNotFoundException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 		});
-		// Fenster sichbar machen
-		setVisible(true);
-	}
+		// Fenster sichbar mache
 
-	// Klasse fuer das Zeichenpanel
-	class ZeichenPanel extends JPanel {
-		// Anfangspunkt fuer die Linien
-		private Point anfang;
+	tVisible(true);
+	
 
-		public Point getAnfang() {
-			return anfang;
-		}
+	Klasse fuer das Zeichenpanel
+	ss ZeichenPanel exten
 
-		public Point getEnde() {
-			return ende;
-		}
+	 ntanfang;
+	
+		
+		
+		anfang;
+		
+	
+	blic Point getEnde() {
 
-		public Color getMalFarbe() {
-			return malFarbe;
-		}
+	
 
-		// Endepunkt fuer die Linien
-		private Point ende;
-		// Malfarbe der Linien - zu Beginn schwarz
-		private Color malFarbe = Color.black;
-		// Doppelpufferung des Bildes
-		private Image pufferBild;
-		private Graphics pufferGraphik;
-		@SuppressWarnings("rawtypes")
-		private ArrayList linien;
+	blic Color getMalFarbe() {
+	eturn malFarbe;
+		
 
-		// Konstruktor fuer das Zeichenpanel
-		@SuppressWarnings("rawtypes")
-		public ZeichenPanel() {
-			super();
-			MausStrg strg = new MausStrg(this);
-			this.setBackground(Color.darkGray);
-			addMouseListener(strg);
-			addMouseMotionListener(strg);
-			linien = new ArrayList();
-		}
+		epunkt fuer die Linien
+		e Point ende;
+		farbe der Linien - zu Be
+		e Color malFarbe = Color.black
+ 
+	e Image puf
 
-		// Malfarbe der Linien setzen
-		public void setzenMalFarbe(Color c) {
-			malFarbe = c;
-		}
+	rBild;
+	i
 
-		public void speichernBild() {
-			FileOutputStream out;
-			try {
-				out = new FileOutputStream("linien.txt");
-				ObjectOutputStream oout = new ObjectOutputStream(out);
-				for (int i = 0; i < linien.size(); i++) {
-					oout.writeObject(linien.get(i));
-				}
-				oout.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+	ivate ArrayList linien;
+	
+		struktor fuer das Zeichenpanel
+		
 
-		public void ladenBild() throws ClassNotFoundException {
-			FileInputStream in;
-			JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-			File selectedFile = null;
-			int returnValue = jfc.showOpenDialog(null);
-			try {
-				if (returnValue == JFileChooser.APPROVE_OPTION) {
-					selectedFile = jfc.getSelectedFile();
-				}
+	ssWarnings("rawty
+	
+	
+	ausStrg strg = new MausStrg(this)
+	his.setBackground(Colo
+		useListener(strg);
+		useMotionListener(strg);
+		n = new ArrayList();
+		
+		
+	 
 
-				in = new FileInputStream(selectedFile.getAbsolutePath());
-				ObjectInputStream iin = new ObjectInputStream(in);
-				// Linien auslesen
-				iin.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
+	alFarbe = c;
+		
+		
+			d speichernBild() {
+			tStream out;
+			
+			w FileOutputStream("linien.txt");
+		c
+		(int i = 0; i < linien.size(); i++) 
+		
 
-		// Anfangspunkt der Linien setzen
-		public void setzenAnfangPunkt(Point p) {
-			anfang = p;
-		}
+	oout.close();
+	 catch (IOException e) {
+		intStackTrace();
+			
+		
+			
+		 void ladenBild() throws ClassNotFou
+			Stream in;
+		Chooser jfc = new JFileChooser(FileSy
+			ctedFile = null;
+		eturnValue = jfc.showOpenDialog(null
+			
+		returnValue == JFileChooser.APPROVE_O
+			dFile = jfc.getSelected
+		
+	
 
-		// Endepunkt der Linien setzen
-		public void setzenEndePunkt(Point p) {
-			ende = p;
-		}
+	ObjectInputStream iin = new ObjectInputS
+	// Linien auslesen
+		close();
+	 
 
-		// Linie in die Puffergrafik zeichnen
-		public void zeichnenLinie() {
-			pufferGraphik.setColor(malFarbe);
-			pufferGraphik.drawLine(anfang.x, anfang.y, ende.x, ende.y);
-			repaint();
-		}
+	
+	
+		
+	 
 
-		// Linie speichern
-		@SuppressWarnings("unchecked")
-		public void speichernLinie(SpeicherLinie e) {
-			linien.add(e);
-		}
+	nfang = p;
+	
+		
+		epunkt der Linien setzen
+		 void setzenEndePunkt(Point p) {
+		= p;
+		
+		
+		ie in die Puffergrafik zeichnen
+	b
 
-		// Bild loeschen
-		@SuppressWarnings("rawtypes")
-		public void loeschenBild() {
-			Color alteMalFarbe = malFarbe;
-			linien = new ArrayList();
-			pufferGraphik.setColor(getBackground());
-			pufferGraphik.fillRect(0, 0, getSize().width, getSize().height);
-			malFarbe = alteMalFarbe;
-			repaint();
-		}
+	ufferGraphik.drawLine(anfang.x, anf
+	epaint();
 
-		// Puffergrafik zeichnen
-		public void paintComponent(Graphics g) {
-			if (pufferBild == null) {
-				pufferBild = createImage(getSize().width, getSize().height);
-				pufferGraphik = pufferBild.getGraphics();
-				pufferGraphik.setColor(getBackground());
-				pufferGraphik.fillRect(0, 0, getSize().width, getSize().height);
-			}
-			g.drawImage(pufferBild, 0, 0, this);
+		
+		ie speichern
+		essWarnings("unchecked")
 
-		}
+			d(e);
 
-		@SuppressWarnings("rawtypes")
-		public ArrayList getLinien() {
-			return linien;
-		}
+			
+			esche
+				ngs("rawtypes")
+						ld() {
+								;
+				ArrayList();
+				.setColor(ge
+			phik.fillRect(0, 0, getSi
+				teMalFarbe;
+			;
+				
+					
+				k zeichnen
+				i
+			r
 
-	}
+		e
+	p
 
-	// Klasse fuer die Maussteuerung
-	class MausStrg implements MouseListener, MouseMotionListener {
+	
+	.drawImage(pufferBild, 0, 0, t
+	
+		
+		
+		essWarnings("rawtypes")
+			ayList getLinien() {
+			nien;
 
-		private ZeichenPanel malen;
+			
+			
+				
+						steuerung
+								Listener, MouseMotionListene
+				
 
-		public MausStrg(ZeichenPanel f) {
-			malen = f;
-		}
+			
+				g(ZeichenPanel f) {
+			;
+				
+			
+				usePr
+					int();
+				nfangPunkt(p);
+				
+			
 
-		public void mousePressed(MouseEvent e) {
-			Point p = e.getPoint();
-			malen.setzenAnfangPunkt(p);
-		}
+		 p = e.getPo
 
-		public void mouseDragged(MouseEvent e) {
-			Point p = e.getPoint();
-			malen.setzenEndePunkt(p);
-			malen.zeichnenLinie();
-			malen.setzenAnfangPunkt(p);
-			SpeicherLinie lin = new SpeicherLinie(malen.getAnfang(), malen.getEnde(), malen.getMalFarbe());
-			malen.speichernLinie(lin);
-		}
+		.zeichnenLinie();
+			zenAnfangPunkt(p);
+			inie lin = new Speic
+			ichernLinie(lin);
+				
+				
+				useReleased(MouseEvent e)
+				
+				
 
-		public void mouseReleased(MouseEvent e) {
-		}
+			
+			
+		 
 
-		public void mouseClicked(MouseEvent e) {
-		}
-
-		public void mouseEntered(MouseEvent e) {
-		}
-
+	
 		public void mouseExited(MouseEvent e) {
 		}
 
@@ -285,9 +295,92 @@ public class Malen extends JFrame {
 		}
 	}
 
-	// Start-Klasse
-	public static void main(String[] args) {
-		new Malen();
-	}
 
-}
+	lic static void main(String[] args
+
+	
+		
+	
+
+	
+		
+		
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+		
+	
+
+	
+
+	
+		
+	
+
+	
+
+	
+	
+		
+	
+
+	
+	
+		
+		
+		
+		
+		
+	
+
+	
+	
+	
+
+	
+	
+
+	
+	
+
+	
+	
+
+	
+	
