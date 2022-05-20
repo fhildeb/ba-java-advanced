@@ -10,7 +10,7 @@ public class SpeicherLinie implements Serializable {
 	Point anfang;
 	Point ende;
 	Color malFarbe;
-	
+
 	public SpeicherLinie(Point anfang, Point ende, Color malFarbe) {
 		this.anfang = anfang;
 		this.ende = ende;
@@ -28,5 +28,5 @@ public class SpeicherLinie implements Serializable {
 	public Color getMalFarbe() {
 		return malFarbe;
 	}
-	
+
 }
