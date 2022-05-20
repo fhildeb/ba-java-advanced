@@ -1,5 +1,5 @@
 # ba-java-course-advanced
-HSMW BA Java Course for advanced students from the University of Applied Science Mittweida in the subject Java that took place in 2018.
+HSMW BA Java Course for Advanced Students from the University of Applied Science Mittweida in the subject Java that took place in 2018.
 
 > **_NOTE:_** The commentary and filenames might appear in German.
 
