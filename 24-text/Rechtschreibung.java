@@ -29,7 +29,7 @@ public class Rechtschreibung {
             while (zeile != null) {
                 woerterbuch.add(zeile);
                 zeile = in.readLine();
-                // Tester des W�rterbuchinhalts
+                // Tester des Woerterbuchinhalts
                 // System.out.println(woerterbuch);
             }
             in.close();

@@ -1,7 +1,7 @@
 package graph;
 
 /**
- * Rahmenklasse f�r einen Algorithmus zur Tiefensuche.
+ * Rahmenklasse fuer einen Algorithmus zur Tiefensuche.
  *
  */
 public class Tiefensuche {
@@ -15,7 +15,7 @@ public class Tiefensuche {
 	 * @param s Nummer des Ausgangspunktes (Vertex)
 	 */
 	public Tiefensuche(Graph G, int s) {
-		// Hier m�ssen noch die Attribute der Klasse initialisiert werden
+		// Hier muessen noch die Attribute der Klasse initialisiert werden
 		suche(G, s);
 	}
 
@@ -30,14 +30,14 @@ public class Tiefensuche {
 	}
 
 	/**
-	 * Gibt die Anzahl der Knoten zur�ck, die mit dem Start-Knoten <tt>s</tt>
+	 * Gibt die Anzahl der Knoten zurueck, die mit dem Start-Knoten <tt>s</tt>
 	 * verbunden sind.
 	 * 
 	 * @return Anzahl <tt>s</tt>
 	 */
 	public int count() {
 		return s;
-		// bitte erg�nzen
+		// bitte ergaenzen
 	}
 
 	/**
@@ -48,7 +48,7 @@ public class Tiefensuche {
 	 */
 	public boolean marked(int v) {
 		return false;
-		// bitte erg�nzen Tipp: Wenn ein Knoten markiert ist, so kann er von s aus auch
+		// bitte ergaenzen Tipp: Wenn ein Knoten markiert ist, so kann er von s aus auch
 		// erreicht werden
 	}
 }

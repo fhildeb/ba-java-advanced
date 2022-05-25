@@ -1,11 +1,5 @@
 package draw;
 
-
-/**
- * @author grupf
- *
- */
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedInputStream;
@@ -20,50 +14,38 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-
-
-
-
 // Startklasse
-public class Malen
-{
-    public static void main(String[] args)
-    {
-	new MalenFrame();
-
+public class Malen {
+    public static void main(String[] args) {
+        new MalenFrame();
 
     }
 }
 
 // die Oberflaeche
 @SuppressWarnings("serial")
-class MalenFrame extends JFrame
-{
+class MalenFrame extends JFrame {
 
     // Konstruktor: Einrichten der Anwendung
-    public MalenFrame()
-    {
-	super("Malen");
-	setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-	setSize( 500 ,300 );
-	setLocation(200, 200);
+    public MalenFrame() {
+        super("Malen");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 300);
+        setLocation(200, 200);
         setResizable(false);
 
-      //  Container f�r sichtbare Dialogelemente anlegen
-        JPanel contentPanel =(JPanel) this.getContentPane();
+        // Container fuer sichtbare Dialogelemente anlegen
+        JPanel contentPanel = (JPanel) this.getContentPane();
 
-     // Mitte:  Zeichenfl�che erzeuegen
+        // Mitte: Zeichenflaeche erzeuegen
 
         ZeichenPanel zeichenPanel = new ZeichenPanel();
-        contentPanel.add( zeichenPanel,"Center" );
+        contentPanel.add(zeichenPanel, "Center");
 
-
-     // oben: Farbauswahlpanel
+        // oben: Farbauswahlpanel
         JPanel farbAuswahlPanel = new JPanel();
         contentPanel.add(farbAuswahlPanel, "North");
         farbAuswahlPanel.setBackground(Color.LIGHT_GRAY);
-
-
 
         // Beschriftung
         farbAuswahlPanel.add(new Label("Mal-Farbe auswaehlen"));
@@ -104,69 +86,62 @@ class MalenFrame extends JFrame
         ladeKnopf.setEnabled(true);
         ladeKnopf.addActionListener(new MalenLadenKnopfStrg(zeichenPanel));
 
-
         // Knopf zum Beenden
         JButton endeKnopf = new JButton("      Ende      ");
         knopfPanel.add(endeKnopf);
         endeKnopf.addActionListener(new MalenEndeKnopfStrg(this));
 
         // sichtbar machen
-	setVisible( true );
+        setVisible(true);
 
-	// Fokus auf Farbauswahl setzen
-	farbAuswahl.requestFocus();
+        // Fokus auf Farbauswahl setzen
+        farbAuswahl.requestFocus();
     }
 
     // Methode zum Schliessen des Fensters
-    void schliessenFenster()
-    {
+    void schliessenFenster() {
         dispose();
         System.exit(0);
     }
 }
 
-// Klasse f�r die Zeichenfl�che
+// Klasse fuer die Zeichenflaeche
 
 @SuppressWarnings("serial")
-class ZeichenPanel extends JPanel
-{
- // Malfarbe fuer die Linien, anfangs Schwarz
-    private  Color malFarbe = Color.BLACK;
+class ZeichenPanel extends JPanel {
+    // Malfarbe fuer die Linien, anfangs Schwarz
+    private Color malFarbe = Color.BLACK;
 
     // der Anfangspunkt fuer eine Linie
-    private  Point anfang;
+    private Point anfang;
 
     // der Endpunkt fuer eine Linie
-    private  Point ende;
+    private Point ende;
 
-
-   // zur Doppelpufferung des Bildes
+    // zur Doppelpufferung des Bildes
     private Image pufferBild;
 
     private Graphics pufferGraphik;
 
     private ArrayList<SpeicherLinie> linien;
 
-    // Konstruktor: Einrichten der Zeichenfl�che
-    public ZeichenPanel()
-    {
-	 setBackground(Color.white);
+    // Konstruktor: Einrichten der Zeichenflaeche
+    public ZeichenPanel() {
+        setBackground(Color.white);
 
-	// Mausbeobachter ermittelt die Punkte und veranlasst das Zeichnen
-	MalenMausStrg mstrg = new MalenMausStrg(this);
-	addMouseListener(mstrg);
-	addMouseMotionListener(mstrg);
+        // Mausbeobachter ermittelt die Punkte und veranlasst das Zeichnen
+        MalenMausStrg mstrg = new MalenMausStrg(this);
+        addMouseListener(mstrg);
+        addMouseMotionListener(mstrg);
 
-	linien = new ArrayList<SpeicherLinie>();
+        linien = new ArrayList<SpeicherLinie>();
     }
 
     // Methode zum Speichern einer Linie
-    void speichernLinie()
-    {
-	SpeicherLinie linie = new SpeicherLinie(anfang, ende, malFarbe);
-	linien.add(linie);
+    void speichernLinie() {
+        SpeicherLinie linie = new SpeicherLinie(anfang, ende, malFarbe);
+        linien.add(linie);
     }
-
 
     // Methode zum Zeichnen der Linie
     void zeichnenLinie() {
@@ -177,10 +152,8 @@ class ZeichenPanel extends JPanel
         repaint();
     }
 
-
-    protected void paintComponent( Graphics g )
-    {
-	// Hintergrundbild initialisieren, wenn nicht vorhanden
+    protected void paintComponent(Graphics g) {
+        // Hintergrundbild initialisieren, wenn nicht vorhanden
         if (pufferBild == null) {
             pufferBild = createImage(getSize().width, getSize().height);
             pufferGraphik = pufferBild.getGraphics();
@@ -191,8 +164,7 @@ class ZeichenPanel extends JPanel
     }
 
     // Methode zum Setzen der Malfarbe
-    void setzenFarbe(String auswahl)
-    {
+    void setzenFarbe(String auswahl) {
         if (auswahl.equals("Schwarz")) {
             malFarbe = Color.black;
         } else if (auswahl.equals("Rot")) {
@@ -209,20 +181,17 @@ class ZeichenPanel extends JPanel
     }
 
     // Methode zum Setzen des Anfangspunktes
-    void setzenAnfangPunkt(Point p)
-    {
+    void setzenAnfangPunkt(Point p) {
         anfang = p;
     }
 
     // Methode zum Setzen des Endpunktes
-    void setzenEndePunkt(Point p)
-    {
+    void setzenEndePunkt(Point p) {
         ende = p;
     }
 
-    // Methode zum L�schen des Bilds
-    void loeschenBild()
-    {
+    // Methode zum Loeschen des Bilds
+    void loeschenBild() {
         // Hintergrundbild neu anlegen
         pufferBild = createImage(getSize().width, getSize().height);
         pufferGraphik = pufferBild.getGraphics();
@@ -233,215 +202,172 @@ class ZeichenPanel extends JPanel
     }
 
     // Methode zum Speichern des Bildes
-    public void speichernBild()
-    {
+    public void speichernBild() {
 
-	    JFileChooser chooser = new JFileChooser();
-	    int returnVal = chooser.showSaveDialog(this);
-	    if(returnVal == JFileChooser.APPROVE_OPTION)
-	    {
+        JFileChooser chooser = new JFileChooser();
+        int returnVal = chooser.showSaveDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
 
-	      File file = chooser.getSelectedFile();
+            File file = chooser.getSelectedFile();
 
+            ObjectOutputStream oos = null;
+            try {
+                oos = new ObjectOutputStream(
+                        new BufferedOutputStream(
+                                new FileOutputStream(file)));
+                oos.writeObject(linien);
+                oos.flush();
+            } catch (IOException e) {
+                System.out.println("Fehler beim Speichern!");
+            } finally {
+                try {
+                    oos.close();
+                } catch (IOException ex) {
+                }
+            }
 
-	      ObjectOutputStream oos =null;
-	      try
-	      {
-		oos = new ObjectOutputStream(
-			new BufferedOutputStream(
-				new FileOutputStream(file)));
-		oos.writeObject(linien);
-		oos.flush();
-	      }
-	      catch (IOException e)
-	      {
-		System.out.println("Fehler beim Speichern!");
-	      }
-	      finally
-	      {
-		try
-		{
-		    oos.close();
-		}
-		catch(IOException ex){}
-	      }
-
-	    }
+        }
     }
 
     // Methode zum Laden des Bildes
     @SuppressWarnings("unchecked")
-	public void ladenBild()
-    {
-	JFileChooser chooser = new JFileChooser();
-	    int returnVal = chooser.showOpenDialog(this);
-	    if(returnVal == JFileChooser.APPROVE_OPTION)
-	    {
-	      loeschenBild();  // Altes Bild l�schen
-	      File file = chooser.getSelectedFile();
+    public void ladenBild() {
+        JFileChooser chooser = new JFileChooser();
+        int returnVal = chooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            loeschenBild(); // Altes Bild loeschen
+            File file = chooser.getSelectedFile();
 
-	    ObjectInputStream ois =null;
-	    try
-	    {
-		ois = new ObjectInputStream(
-			new BufferedInputStream(
-				new FileInputStream(file)));
-		linien =  (ArrayList<SpeicherLinie>) ois.readObject();
+            ObjectInputStream ois = null;
+            try {
+                ois = new ObjectInputStream(
+                        new BufferedInputStream(
+                                new FileInputStream(file)));
+                linien = (ArrayList<SpeicherLinie>) ois.readObject();
 
-	    }
-	    catch (IOException e)
-	    {
-		System.out.println("Fehler beim Laden!");
-	    }
-	    catch (ClassNotFoundException exx)
-	    {
-		System.out.println("Fehler beim Casten!");
-	    }
-	    finally
-	    {
-		try
-		{
-		    ois.close();
-		}
-		catch(IOException ex){}
-	    }
+            } catch (IOException e) {
+                System.out.println("Fehler beim Laden!");
+            } catch (ClassNotFoundException exx) {
+                System.out.println("Fehler beim Casten!");
+            } finally {
+                try {
+                    ois.close();
+                } catch (IOException ex) {
+                }
+            }
 
-	    } // Ende if
+        } // Ende if
 
-	    if(linien!=null)
-	    	{
-	    	 Color alteMalFarbe =malFarbe;
-	    	 SpeicherLinie linie;
-	    	 for(int i=0;i<linien.size();i++)
-	    	 	{
-	    		 linie= linien.get(i);
-	    		 anfang= linie.holenAnfang();
-	    		 ende=linie.holenEnde();
-	    		 malFarbe= linie.holenMalFarbe();
-	    		 zeichnenLinie();
+        if (linien != null) {
+            Color alteMalFarbe = malFarbe;
+            SpeicherLinie linie;
+            for (int i = 0; i < linien.size(); i++) {
+                linie = linien.get(i);
+                anfang = linie.holenAnfang();
+                ende = linie.holenEnde();
+                malFarbe = linie.holenMalFarbe();
+                zeichnenLinie();
 
-	    	 	}
-	    	 malFarbe=alteMalFarbe;
-	    	}
+            }
+            malFarbe = alteMalFarbe;
+        }
 
     }
 
 }
 
+// die Beobachter-Klassen
 
-//die Beobachter-Klassen
-
-//Klasse zur Steuerung fuer die Farbauswahl
-class MalenFarbAuswahlStrg implements ItemListener
-{
-
- private ZeichenPanel zeichenPanel;
-
- public MalenFarbAuswahlStrg(ZeichenPanel z)
- {
-     zeichenPanel = z;
- }
-
- public void itemStateChanged(ItemEvent e)
- {
-     String auswahl = ((String) e.getItem()).trim();
-     zeichenPanel.setzenFarbe(auswahl);
- }
-}
-
-
-//Steuerung fuer den LoeschKnopf
-class MalenLoeschKnopfStrg implements ActionListener
-{
-
- private ZeichenPanel zeichenPanel;
-
- public MalenLoeschKnopfStrg(ZeichenPanel z)
- {
-     zeichenPanel = z;
- }
-
- public void actionPerformed(ActionEvent e)
- {
-     zeichenPanel.loeschenBild();
- }
-}
-
-
-//Steuerung fuer den EndeKnopf
-class MalenEndeKnopfStrg implements ActionListener
-{
-
- private MalenFrame frame;
-
- public MalenEndeKnopfStrg(MalenFrame f)
- {
-     frame = f;
- }
-
- public void actionPerformed(ActionEvent e)
- {
-     frame.schliessenFenster();
- }
-
-
-}
-
-
-//Steuerung fuer den SpeicherKnopf
-class MalenSpeicherKnopfStrg implements ActionListener
-{
-
- private ZeichenPanel zeichenPanel;
-
- public MalenSpeicherKnopfStrg(ZeichenPanel z) {
-     zeichenPanel = z;
- }
-
- public void actionPerformed(ActionEvent e)
- {
-     zeichenPanel.speichernBild();
- }
-}
-
-//Steuerung fuer den LadeKnopf
-class MalenLadenKnopfStrg implements ActionListener
-{
-
-private ZeichenPanel zeichenPanel;
-
-public MalenLadenKnopfStrg(ZeichenPanel z) {
-   zeichenPanel = z;
-}
-
-public void actionPerformed(ActionEvent e)
-{
-   zeichenPanel.ladenBild();
-}
-}
-
-//die Maussteuerung fuer das Malen
-class MalenMausStrg implements MouseListener, MouseMotionListener
-{
+// Klasse zur Steuerung fuer die Farbauswahl
+class MalenFarbAuswahlStrg implements ItemListener {
 
     private ZeichenPanel zeichenPanel;
 
-    public MalenMausStrg(ZeichenPanel z)
-    {
+    public MalenFarbAuswahlStrg(ZeichenPanel z) {
+        zeichenPanel = z;
+    }
+
+    public void itemStateChanged(ItemEvent e) {
+        String auswahl = ((String) e.getItem()).trim();
+        zeichenPanel.setzenFarbe(auswahl);
+    }
+}
+
+// Steuerung fuer den LoeschKnopf
+class MalenLoeschKnopfStrg implements ActionListener {
+
+    private ZeichenPanel zeichenPanel;
+
+    public MalenLoeschKnopfStrg(ZeichenPanel z) {
+        zeichenPanel = z;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        zeichenPanel.loeschenBild();
+    }
+}
+
+// Steuerung fuer den EndeKnopf
+class MalenEndeKnopfStrg implements ActionListener {
+
+    private MalenFrame frame;
+
+    public MalenEndeKnopfStrg(MalenFrame f) {
+        frame = f;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        frame.schliessenFenster();
+    }
+
+}
+
+// Steuerung fuer den SpeicherKnopf
+class MalenSpeicherKnopfStrg implements ActionListener {
+
+    private ZeichenPanel zeichenPanel;
+
+    public MalenSpeicherKnopfStrg(ZeichenPanel z) {
+        zeichenPanel = z;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        zeichenPanel.speichernBild();
+    }
+}
+
+// Steuerung fuer den LadeKnopf
+class MalenLadenKnopfStrg implements ActionListener {
+
+    private ZeichenPanel zeichenPanel;
+
+    public MalenLadenKnopfStrg(ZeichenPanel z) {
+        zeichenPanel = z;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        zeichenPanel.ladenBild();
+    }
+}
+
+// die Maussteuerung fuer das Malen
+class MalenMausStrg implements MouseListener, MouseMotionListener {
+
+    private ZeichenPanel zeichenPanel;
+
+    public MalenMausStrg(ZeichenPanel z) {
         zeichenPanel = z;
     }
 
     // Methoden von MouseListener und MouseMotionListener implementieren
 
     // beim Druecken der Maustaste kann das Zeichnen beginnen
-    public void mousePressed(MouseEvent e)
-    {
+    public void mousePressed(MouseEvent e) {
         zeichenPanel.setzenAnfangPunkt(e.getPoint());
     }
 
     // beim Verschieben der Maus mit gedrueckter Taste wird gemalt
-    public void mouseDragged(MouseEvent e)
-    {
+    public void mouseDragged(MouseEvent e) {
         zeichenPanel.setzenEndePunkt(e.getPoint());
         zeichenPanel.speichernLinie();
         zeichenPanel.zeichnenLinie();

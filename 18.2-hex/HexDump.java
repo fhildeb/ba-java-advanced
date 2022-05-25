@@ -250,7 +250,7 @@ public class HexDump extends JFrame {
     private JMenuItem getOpenMenuItem() {
         if (openMenuItem == null) {
             openMenuItem = new JMenuItem();
-            openMenuItem.setText("�ffnen");
+            openMenuItem.setText("oeffnen");
             openMenuItem.setActionCommand("Open");
             openMenuItem.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent e) {

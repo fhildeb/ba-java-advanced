@@ -83,7 +83,7 @@ public class StringsSpeichern {
             indexraf.seek(indexpos); // hier steht der Dateizeiger fuer die
                                      // Datendatei
             long pos = indexraf.readLong();
-            datenraf.seek(pos); // hier steht der gew�nschte String
+            datenraf.seek(pos); // hier steht der gewuenschte String
             s = datenraf.readUTF();
         } catch (IOException e) {
             System.out.println("Dateifehler : " + e.getMessage());
