@@ -2,6 +2,6 @@
 
 ## GUI
 
-![Malen Vorher](./../img/19.1-draw_01.png)
-![Malen Nachher](./../img/19.1-draw_02.png)
-![Malen Laden](./../img/19.1-draw_03.png)
+![Malen Vorher](./../img/19-malen_01.png)
+![Malen Nachher](./../img/19-malen_02.png)
+![Malen Laden](./../img/19-malen_03.png)
