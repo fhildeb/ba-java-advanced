@@ -45,7 +45,10 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Factorial Calculator
     - Towers of Hanoi Solver
 
-17.
+17. RandomAccessFile Control
+
+    - Reading and Writing Numbers
+
 18.
 19.
 20.

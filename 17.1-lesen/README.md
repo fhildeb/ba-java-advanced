@@ -1,5 +1,7 @@
 # DateiLesen (Main)
 
+This program demonstrates using RandomAccessFile in Java to read and write numbers to a file. It consists of a test class that creates a RandomAccessFile for reading and writing and writes the squares of integers from 0 to 100 into the file. After writing the numbers, the program resets the file pointer to the beginning and reads back all the written numbers, displaying them in the terminal.
+
 ## Terminal Output
 
 ```bash
@@ -9,49 +11,6 @@
 16
 25
 36
-49
-64
-81
-100
-121
-144
-169
-196
-225
-256
-289
-324
-361
-400
-441
-484
-529
-576
-625
-676
-729
-784
-841
-900
-961
-1024
-1089
-1156
-1225
-1296
-1369
-1444
-1521
-1600
-1681
-1764
-1849
-1936
-2025
-2116
-2209
-2304
-2401
+...
 2500
-
 ```
