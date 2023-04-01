@@ -51,7 +51,10 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Multi-Type Indexed Storage Management
 
 18. ## Advanced File Operations
+
     - Copying, Moving, Downloading
+    - Hexadecimal File Display
+
 19.
 20.
 21.

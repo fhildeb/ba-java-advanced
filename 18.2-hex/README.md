@@ -1,5 +1,7 @@
 # HexDump (Main)
 
+This program, called HexDumpTool, allows users to display a file's contents as hexadecimal byte sequences with 16 bytes per line. It also shows the printable ASCII characters corresponding to those bytes, separated by eight spaces. Non-printable bytes are represented by a period '.' in the ASCII character representation section.
+
 ## GUI
 
 ![HexDump Vorher](./../img/18.2-hex_01.png)
