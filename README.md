@@ -43,6 +43,7 @@ This advanced Java software course went deep into Java programming, focusing on 
 16. Recursive Puzzle Solving
 
     - Factorial Calculator
+    - Towers of Hanoi Solver
 
 17.
 18.
