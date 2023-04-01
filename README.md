@@ -38,6 +38,7 @@ This advanced Java software course went deep into Java programming, focusing on 
 15. JavaFX Interfaces
 
     - Simple Text Manipulation
+    - Dice Statistics Visualization
 
 16.
 17.
