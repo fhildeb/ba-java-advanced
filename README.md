@@ -71,7 +71,9 @@ This advanced Java software course went deep into Java programming, focusing on 
     - XOR Method
 
 26. Depth-First & Breadth-First Graph Searches
-27.
+27. Dynamic Data Structure Management
+    - Simple Linked List Implementation
+    - Recursion-to-Iteration with Stack
 
 ## Tools
 
