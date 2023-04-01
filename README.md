@@ -70,7 +70,7 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Caesar Cipher
     - XOR Method
 
-26.
+26. Depth-First & Breadth-First Graph Searches
 27.
 
 ## Tools
