@@ -55,7 +55,7 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Copying, Moving, Downloading
     - Hexadecimal File Display
 
-19.
+19. Mouse Drawing Serialization
 20.
 21.
 22.
