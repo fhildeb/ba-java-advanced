@@ -58,7 +58,11 @@ This advanced Java software course went deep into Java programming, focusing on 
 19. Mouse Drawing Serialization
 20. Sequential and Binary Search Performance
 21. Bubble, Insetion, Selection Sort Comparison
-22.
+22. Comparable Sorting Algorithm Interface
+
+    - Merge Sort Comparison
+    - Rational Number Comparison
+
 23.
 24.
 25.
