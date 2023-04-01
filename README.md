@@ -63,7 +63,7 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Merge Sort Comparison
     - Rational Number Comparison
 
-23.
+23. Multi-Number Phonebook Management
 24.
 25.
 26.
