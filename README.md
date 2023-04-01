@@ -50,7 +50,8 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Reading and Writing Numbers
     - Multi-Type Indexed Storage Management
 
-18.
+18. ## Advanced File Operations
+    - Copying, Moving, Downloading
 19.
 20.
 21.
