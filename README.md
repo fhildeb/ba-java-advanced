@@ -32,43 +32,30 @@ This advanced Java software course went deep into Java programming, focusing on 
 
 14. Greatest Common Divisor Calculator
 15. JavaFX Interfaces
-
     - Simple Text Manipulation
     - Dice Statistics Visualization
-
 16. Recursive Puzzle Solving
-
     - Factorial Calculator
     - Towers of Hanoi Solver
-
 17. RandomAccessFile Control
-
     - Reading and Writing
     - Multi-Type Indexed Storage Management
-
 18. Advanced File Operations
-
     - Copying, Moving, Downloading
     - Hexadecimal File Display
-
 19. Mouse Drawing Serialization
 20. Sequential and Binary Search Performance
 21. Bubble, Insertion, Selection Sort Comparison
 22. Comparable Sorting Algorithm Interface
-
     - Merge Sort Comparison
     - Rational Number Comparison
-
 23. Multi-Number Phonebook Management
 24. Basic Spelling Checker Tool
 25. Encryption and Decryption
-
     - Caesar Cipher
     - XOR Method
-
 26. Depth-First & Breadth-First Graph Searches
 27. Dynamic Data Structure Management
-
     - Simple Linked List Implementation
     - Recursion-to-Iteration with Stack
 
