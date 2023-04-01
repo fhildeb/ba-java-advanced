@@ -50,7 +50,7 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Reading and Writing Numbers
     - Multi-Type Indexed Storage Management
 
-18. ## Advanced File Operations
+18. Advanced File Operations
 
     - Copying, Moving, Downloading
     - Hexadecimal File Display
@@ -65,7 +65,11 @@ This advanced Java software course went deep into Java programming, focusing on 
 
 23. Multi-Number Phonebook Management
 24. Basic Spelling Checker Tool
-25.
+25. Encryption and Decryption
+
+    - Caesar Cipher
+    -
+
 26.
 27.
 

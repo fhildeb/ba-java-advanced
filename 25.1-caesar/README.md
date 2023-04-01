@@ -1,5 +1,7 @@
 # Caesar (Main)
 
+This program implements the Caesar cipher, a classical substitution cipher. It takes an input string and an integer key, then shifts each letter in the row by the critical value. The program also includes a decryption method that reverses the encryption process to retrieve the original message.
+
 ## Terminal Output
 
 ```bash
