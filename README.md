@@ -68,7 +68,7 @@ This advanced Java software course went deep into Java programming, focusing on 
 25. Encryption and Decryption
 
     - Caesar Cipher
-    -
+    - XOR Method
 
 26.
 27.
