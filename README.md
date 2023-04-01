@@ -56,8 +56,8 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Hexadecimal File Display
 
 19. Mouse Drawing Serialization
-20. Sequential and Binary Searches
-21.
+20. Sequential and Binary Search Performance
+21. Bubble, Insetion, Selection Sort Comparison
 22.
 23.
 24.
