@@ -35,7 +35,10 @@ This advanced Java software course went deep into Java programming, focusing on 
 > The first half of this course: [ba-java-basic](https://github.com/fhildeb/ba-java-basic)
 
 14. Greatest Common Divisor Calculator
-15.
+15. JavaFX Interfaces
+
+    - Simple Text Manipulation
+
 16.
 17.
 18.
