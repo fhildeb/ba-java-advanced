@@ -48,6 +48,7 @@ This advanced Java software course went deep into Java programming, focusing on 
 17. RandomAccessFile Control
 
     - Reading and Writing Numbers
+    - Multi-Type Indexed Storage Management
 
 18.
 19.
