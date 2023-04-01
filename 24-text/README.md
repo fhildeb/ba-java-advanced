@@ -1,5 +1,7 @@
 # Rechtschreibung (Main)
 
+This program offers a simple spelling aid that checks a text against a dictionary of correctly spelled words. It reads the dictionary from a text file and stores it in a HashSet. The program scans the input text line by line, identifying any misspelled words and keeping them in a HashMap. Finally, it generates an error report displaying the line numbers and the misspelled words found in those lines.
+
 ## Terminal Output
 
 ```bash
@@ -21,7 +23,7 @@ Zeile 8: lesen oder schreiben wird dieser zeiger um die ensprechende
 gesammelte Fehler: {1=[paktikum], 2=[engl, speichen], 3=[], 4=[vortellen], 5=[bestimtes, datenelment], 6=[dateiziger, engl, file, pointer], 7=[], 8=[ensprechende]}
 Zeile 9: anzahl von bytes versetzt
 gesammelte Fehler: {1=[paktikum], 2=[engl, speichen], 3=[], 4=[vortellen], 5=[bestimtes, datenelment], 6=[dateiziger, engl, file, pointer], 7=[], 8=[ensprechende], 9=[]}
-Zeile 10: 
+Zeile 10:
 gesammelte Fehler: {1=[paktikum], 2=[engl, speichen], 3=[], 4=[vortellen], 5=[bestimtes, datenelment], 6=[dateiziger, engl, file, pointer], 7=[], 8=[ensprechende], 9=[], 10=[]}
 Zeile 11: in einem einfachn beispiel sehen sie wie man zahlen in
 gesammelte Fehler: {1=[paktikum], 2=[engl, speichen], 3=[], 4=[vortellen], 5=[bestimtes, datenelment], 6=[dateiziger, engl, file, pointer], 7=[], 8=[ensprechende], 9=[], 10=[], 11=[einfachn]}

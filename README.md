@@ -64,7 +64,7 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Rational Number Comparison
 
 23. Multi-Number Phonebook Management
-24.
+24. Basic Spelling Checker Tool
 25.
 26.
 27.
