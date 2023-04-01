@@ -40,7 +40,10 @@ This advanced Java software course went deep into Java programming, focusing on 
     - Simple Text Manipulation
     - Dice Statistics Visualization
 
-16.
+16. Recursive Puzzle Solving
+
+    - Factorial Calculator
+
 17.
 18.
 19.
